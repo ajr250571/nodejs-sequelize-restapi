@@ -1,7 +1,9 @@
 import { Proyect } from "../models/Proyect.js";
 
-export const getProyects = (req, res) => {
-  res.send('Getting proyect');
+export const getProyects = async (req, res) => {
+  const proyects = await Proyect.findAll();
+  console.log(proyects);
+  res.json(proyects);
 };
 
 export const createProyect = async (req, res) => {
